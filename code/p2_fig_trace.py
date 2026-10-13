@@ -10,10 +10,9 @@ import shutil
 
 import numpy as np
 
-import gates as G
 import mi_estimators as M
 import observer as obs
-from data_sparse import load_corpus
+from data_sparse import g3, load_corpus
 from schedules import load_config, results_dir
 from verify_bounds import periodic_rate
 
@@ -29,7 +28,7 @@ def pick(clips):
         w = int(round(c.fps))
         m = c.n // w
         a1 = c.e[: m * w].reshape(m, w).max(1)
-        if M.h2(float(a1.mean())) < 0.5 or m < 30 or G.deployed(c.score, c.valid).mean() > 0.6:
+        if M.h2(float(a1.mean())) < 0.5 or m < 30 or g3(c).mean() > 0.6:
             continue                          # evaluable AND informative (deployed open rate < 0.6)
         L = SECONDS * w
         for s in range(0, c.n - L, w * 5):
@@ -48,7 +47,7 @@ def main():
     c, s0 = pick(load_corpus("C121"))
     fps = c.fps
     L = int(SECONDS * fps)
-    a3 = G.deployed(c.score, c.valid)
+    a3 = g3(c)
     rng = np.random.default_rng(42)
     ap = periodic_rate(c.n, float(a3.mean()), rng.random())
     sl = slice(s0, s0 + L)

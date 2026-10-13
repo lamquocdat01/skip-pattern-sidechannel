@@ -44,9 +44,9 @@ sys.path.insert(0, str(HERE.parent))
 sys.path.insert(0, str(HERE))
 
 import attacks as A  # noqa: E402
-import gates as G  # noqa: E402
 import mi_estimators as M  # noqa: E402
 from align import OUT, clip_of, selection  # noqa: E402
+from data_sparse import g3  # noqa: E402
 
 SEEDS = range(5)
 W_LIST = (1, 2, 5)
@@ -63,7 +63,7 @@ class Video:
         self.tag = tag
         c = clip_of(dataset, video)
         self.c, self.fps, self.e = c, c.fps, c.e
-        self.a = G.deployed(c.score, c.valid).astype(np.int8)
+        self.a = g3(c).astype(np.int8)
         al = pd.read_csv(OUT / f"aligned_{tag}.csv")
         self.al = al
         x_s = (al.I_mA.to_numpy() - calib["I_idle_mA"]) / calib["dI_frame_mA"]   # per-sample open estimate

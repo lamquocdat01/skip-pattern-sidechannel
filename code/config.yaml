@@ -12,6 +12,9 @@ data:
   frame_scores: "frame_scores.parquet"      # dataset, video, frame, score S_t, g_t (in-event 0/1), valid
   events_gated: "events_gated.csv"          # dataset, video, event_id, onset, duration, ...
   activation_by_video: "activation_by_video.csv"
+  # public release of C121 without scores (code/export_c121_release.py), under the datasets root:
+  # per video a_g3 (deployed-gate opens), e (event mask), valid; index.csv with the logged open count per video
+  release_subdir: "_derived/39/c121"
   # VIRAT rows in frame_scores are stubs with no events (g_t == 1 everywhere) -> excluded.
   datasets: [CDnet2014, LASIESTA, BMC]
 

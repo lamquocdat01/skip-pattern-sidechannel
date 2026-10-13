@@ -204,7 +204,10 @@ def numbers(mi, att, loc):
 def replay_check() -> dict:
     """Recomputed (was hard-coded in P1): deployed-gate replay vs the logged deployed trace, threshold replay rate."""
     import gates as G
+    from data_sparse import c121_from_scores
     from schedules import load_videos, processed_dir
+    if not c121_from_scores(CFG):
+        return replay_check_release()
     vids = load_videos(CFG)
     act = pd.read_csv(processed_dir(CFG) / CFG["data"]["activation_by_video"]).set_index(["dataset", "video"])
     n = sum(v.n for v in vids)
@@ -216,6 +219,25 @@ def replay_check() -> dict:
             "videos_exact_match": int(sum(a == b for a, b in zip(dep, ref))), "videos": len(vids), "frames": int(n),
             "pi_in_event": round(float(sum(int(v.e.sum()) for v in vids) / n), 4),
             **{f"n_{d}": sum(v.dataset == d for v in vids) for d in CFG["data"]["datasets"]}}
+
+
+def replay_check_release() -> dict:
+    """Same keys from the public C121 release (G3 schedule, event mask, logged open count per video). The threshold
+    replay rate needs the per-frame scores; it is taken from the committed table P0_open_rate_by_video.csv."""
+    from data_sparse import c121_release_dir, load_c121
+    clips = load_c121(CFG)
+    idx = pd.read_csv(c121_release_dir(CFG) / "index.csv", dtype={"video": str})
+    n = sum(c.n for c in clips)
+    dep = [int(c.meta["a_g3"].sum()) for c in clips]
+    ref = idx.n_opens_logged.astype(int).tolist()
+    p0 = pd.read_csv(OUT / "P0_open_rate_by_video.csv")
+    thr = float((p0.open_rate_replay * p0.n_frames).sum() / p0.n_frames.sum())
+    print("replay_check: C121 from the public release; threshold replay rate from P0_open_rate_by_video.csv")
+    return {"deployed_hysteresis_rho": round(sum(dep) / n, 4), "deployed_trace_rho": round(sum(ref) / n, 4),
+            "threshold_replay_rho_tau055": round(thr, 4),
+            "videos_exact_match": int(sum(a == b for a, b in zip(dep, ref))), "videos": len(clips), "frames": int(n),
+            "pi_in_event": round(float(sum(int(c.e.sum()) for c in clips) / n), 4),
+            **{f"n_{d}": sum(c.dataset == d for c in clips) for d in CFG["data"]["datasets"]}}
 
 
 def numbers_p2(N, mi, att, loc):

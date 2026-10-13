@@ -27,8 +27,7 @@ import pandas as pd
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 
-import gates as G  # noqa: E402
-from data_sparse import load_c121, load_virat  # noqa: E402
+from data_sparse import g3, load_c121, load_virat  # noqa: E402
 from schedules import load_config, results_dir  # noqa: E402
 
 CFG = load_config()
@@ -56,7 +55,7 @@ def check_run(run_dir: Path, sel: pd.DataFrame, clips: dict) -> dict:
         assert hashlib.sha256(raw).hexdigest() == r.sha256, f"{r.tag}: device schedule differs from selection"
         a_dev = pd.read_csv(run_dir / f"sched_{r.tag}.csv").a_t.to_numpy()
         c = clips[r.tag]
-        assert np.array_equal(a_dev, G.deployed(c.score, c.valid).astype(int)), f"{r.tag}: G3 replay changed"
+        assert np.array_equal(a_dev, g3(c).astype(int)), f"{r.tag}: G3 replay changed"
     ms = {s["tag"]: s for s in meta["schedules"]}
     for tag, s in ms.items():
         assert s["overruns"] == 0 and s["n_open_executed"] == s["n_open_schedule"], f"{tag}: replay not exact"
@@ -82,7 +81,7 @@ def align(run: str = RUN_DEFAULT) -> dict:
     idle, steps, volts, per_video = [], [], [], {}
     for r in sel.itertuples():
         c = clips[r.tag]
-        a = c_a = G.deployed(c.score, c.valid).astype(np.int8)
+        a = c_a = g3(c).astype(np.int8)
         x = load_trace(run_dir, r.tag)
         play = x[x.phase == 1].copy()
         k = play.frame.to_numpy()

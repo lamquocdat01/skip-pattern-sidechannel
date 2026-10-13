@@ -37,7 +37,7 @@ from sklearn.preprocessing import StandardScaler
 import gates as G
 import mi_estimators as M
 import observer as obs
-from data_sparse import load_corpus
+from data_sparse import g3, load_corpus
 from schedules import load_config, results_dir
 
 CFG = load_config()
@@ -150,7 +150,7 @@ def wframes(c, W_s) -> int:
 
 # ------------------------------------------------------------------ tiers
 def deployed_rate(c) -> float:
-    return float(G.deployed(c.score, c.valid).mean())
+    return float(g3(c).mean())
 
 
 def tier_masks(clips) -> dict:
@@ -587,6 +587,14 @@ def merge():
     if (OUT / "cross_dataset.csv").exists():
         pd.read_csv(OUT / "cross_dataset.csv").to_csv(out / "P1_cross_dataset.csv", index=False)
     mi = pd.concat([pd.read_parquet(f) for f in sorted(OUT.glob("mi_*.parquet"))], ignore_index=True)
+    lb = pd.concat([pd.read_csv(f) for f in sorted(OUT.glob("milb_*.csv"))], ignore_index=True)
+    tab = pd.concat([mi_summary(mi), lb], ignore_index=True)
+    tab.to_csv(out / "P1_mi_table.csv", index=False)
+    print("merged:", len(att), "attack rows,", len(tab), "MI rows")
+
+
+def mi_summary(mi: pd.DataFrame) -> pd.DataFrame:
+    """Per-video MI rows -> pooled mean and bootstrap CI per (corpus, gate, observer, W, target, tier, estimator)."""
     rows = []
     keys = ["corpus", "family", "param", "observer", "W_s", "target"]
     for tier in TIERS:
@@ -598,10 +606,7 @@ def merge():
                 rows.append(dict(zip(keys, k), tier=tier, estimator=est, mean=mu, ci_lo=lo, ci_hi=hi,
                                  n_videos=len(g), rho_mean=g.rho.mean(), H_E_mean=g.H_E.mean(),
                                  frac_p_lt_0_05=float((g.p_value < 0.05).mean()) if est == "plugin_corr" else np.nan))
-    lb = pd.concat([pd.read_csv(f) for f in sorted(OUT.glob("milb_*.csv"))], ignore_index=True)
-    tab = pd.concat([pd.DataFrame(rows), lb], ignore_index=True)
-    tab.to_csv(out / "P1_mi_table.csv", index=False)
-    print("merged:", len(att), "attack rows,", len(tab), "MI rows")
+    return pd.DataFrame(rows)
 
 
 def ram_guard():

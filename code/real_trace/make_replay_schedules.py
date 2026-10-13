@@ -26,7 +26,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 
 import attacks as A  # noqa: E402
-from data_sparse import load_c121, load_virat  # noqa: E402
+from data_sparse import g3, load_c121, load_virat  # noqa: E402
 from schedules import load_config, results_dir  # noqa: E402
 
 SELECTION = [  # (tag, dataset, video)
@@ -55,7 +55,7 @@ def main() -> None:
     for tag, ds, video in SELECTION:
         i = next(k for k, c in enumerate(clips) if c.dataset == ds and c.video == video)
         c = clips[i]
-        a = A.G.deployed(c.score, c.valid).astype(np.int8)
+        a = g3(c).astype(np.int8)
         text = "frame,a_t\n" + "".join(f"{k},{int(v)}\n" for k, v in enumerate(a))
         name = f"sched_{tag}.csv"
         (data_dir / name).write_bytes(text.encode("ascii"))

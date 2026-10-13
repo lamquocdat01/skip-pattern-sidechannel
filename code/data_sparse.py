@@ -1,6 +1,8 @@
 """data_sparse.py — T08: the three corpora of P1 behind one loader (PREREG_39 §2).
 
   C121   CDnet2014 + LASIESTA + BMC from frame_scores.parquet (stress case, pi ~ 0.77), fps 25 (assumed)
+         without frame_scores.parquet: the public release (data/_derived/39/c121: deployed-gate schedule a_t,
+         event mask, valid flag; no score) -> score is None, only G3 and score-free gates can be evaluated
   VIRAT  8 annotated VIRAT clips; score from virat_scores.py dumps; E = E^disc (discrete activities) or E^veh
   SYN    synthetic sparse-event MODEL (not data): pi in {0.02, 0.05, 0.1, 0.2, 0.5}, 30 videos x 15 000 frames,
          D ~ empirical events_gated.csv durations, geometric gaps, score = Gaussian-copula AR(1) mapped through the
@@ -13,14 +15,17 @@ results/P1b_synthetic_model_v2.json.
 from __future__ import annotations
 
 import json
+import os
 from dataclasses import dataclass, field
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
 from scipy.stats import norm
 
+import gates as G
 from schedules import load_config, load_videos, processed_dir, results_dir
-from virat_scores import virat_paths
+from virat_scores import datasets_root, virat_paths
 
 
 @dataclass
@@ -29,14 +34,14 @@ class Clip:
     dataset: str             # CDnet2014 / LASIESTA / BMC / VIRAT / SYN
     video: str
     fps: float
-    score: np.ndarray
+    score: np.ndarray | None     # None for C121 loaded from the public release (no per-frame scores)
     valid: np.ndarray
     e: np.ndarray
     meta: dict = field(default_factory=dict)
 
     @property
     def n(self) -> int:
-        return len(self.score)
+        return len(self.e)
 
     @property
     def key(self) -> str:
@@ -44,9 +49,42 @@ class Clip:
 
 
 # ------------------------------------------------------------------ C121
+def c121_release_dir(cfg) -> Path:
+    return datasets_root(cfg) / cfg["data"]["release_subdir"]
+
+
+def c121_from_scores(cfg) -> bool:
+    """True when the per-frame scores of the IoT-J pipeline are configured and present."""
+    if os.environ.get("C121_FROM_RELEASE") == "1":
+        return False
+    try:
+        return (processed_dir(cfg) / cfg["data"]["frame_scores"]).exists()
+    except RuntimeError:
+        return False
+
+
 def load_c121(cfg) -> list[Clip]:
-    return [Clip("C121", v.dataset, v.video, float(cfg["fps"][v.dataset]), v.score.astype(np.float64),
-                 v.valid, v.e) for v in load_videos(cfg)]
+    if c121_from_scores(cfg):
+        return [Clip("C121", v.dataset, v.video, float(cfg["fps"][v.dataset]), v.score.astype(np.float64),
+                     v.valid, v.e) for v in load_videos(cfg)]
+    rdir = c121_release_dir(cfg)
+    idx = rdir / "index.csv"
+    if not idx.exists():
+        raise RuntimeError(f"C121 not available: set {cfg['data']['processed_dir_env']} to the per-frame scores or "
+                           f"keep the public release in {rdir} (see README, 'Data')")
+    out = []
+    for r in pd.read_csv(idx, dtype={"video": str}).itertuples():
+        z = np.load(rdir / r.file)
+        out.append(Clip("C121", r.dataset, r.video, float(cfg["fps"][r.dataset]), None, z["valid"].astype(np.int8),
+                        z["e"].astype(np.int8), dict(a_g3=z["a_g3"].astype(np.int8))))
+    return out
+
+
+def g3(c: Clip) -> np.ndarray:
+    """Open schedule of the deployed gate G3: replayed from the scores, or read from the public release."""
+    if c.score is None:
+        return c.meta["a_g3"]
+    return G.deployed(c.score, c.valid)
 
 
 # ------------------------------------------------------------------ VIRAT
