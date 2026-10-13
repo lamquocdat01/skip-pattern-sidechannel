@@ -1,0 +1,97 @@
+# Topic 39 — skip-pattern side channels. All paths and constants live here; code never hard-codes them.
+# Path resolution order for the processed-data directory:
+#   1. env var named in data.processed_dir_env (CFS_PROCESSED_DIR) if set
+#   2. env var named in data.repo_root_env (CFS_REPO) + data.processed_subdir
+#   3. data.repo_root + data.processed_subdir below
+
+data:
+  processed_dir_env: CFS_PROCESSED_DIR
+  repo_root_env: CFS_REPO
+  repo_root: ""            # set CFS_PROCESSED_DIR (or CFS_REPO) - see README, "Data"
+  processed_subdir: "data/processed"
+  frame_scores: "frame_scores.parquet"      # dataset, video, frame, score S_t, g_t (in-event 0/1), valid
+  events_gated: "events_gated.csv"          # dataset, video, event_id, onset, duration, ...
+  activation_by_video: "activation_by_video.csv"
+  # VIRAT rows in frame_scores are stubs with no events (g_t == 1 everywhere) -> excluded.
+  datasets: [CDnet2014, LASIESTA, BMC]
+
+# Frame rate used only to convert window lengths in seconds to frames.
+# ASSUMPTION (not in the source data): 25 fps for all three corpora. Revisit in P1.
+fps:
+  CDnet2014: 25
+  LASIESTA: 25
+  BMC: 25
+
+# Deployed gate (ASMAG+ / Deep3 trace), values as read by certifiable-frame-skipping/cfs/config_reader.py
+deployed_gate:
+  tau: 0.55
+  T_refresh: 15        # forced refresh every T_refresh frames
+  W_maxskip: 4         # reuse cap: force open after W_maxskip skipped frames -> certified latency L = 5
+  reuse_logic: deployed  # "deployed" (fsl > W) or "fixed" (fsl >= W)
+
+gate_families:
+  content_aware:
+    tau_sweep: [0.05, 0.20, 0.35, 0.45, 0.55, 0.65, 0.72, 0.76, 0.78, 0.80, 0.83]
+    shield: [true, false]       # true = deployed refresh + reuse cap (certified L); false = pure threshold
+  periodic:
+    P_sweep: [2, 3, 5, 8, 15, 30]
+  rate_limited:                 # content-aware demand, token bucket <= K opens per sliding Wb frames
+    tau: 0.55
+    Wb: 25
+    K_sweep: [3, 5, 8, 12]
+  privacy_certified:            # rate-limited + Bernoulli dummy activations with prob lambda_d per frame
+    tau: 0.55
+    Wb: 25
+    K: 5
+    lambda_d_sweep: [0.05, 0.10, 0.20, 0.30]
+
+observer:
+  # Energy per frame (mJ) — Deep3 C2b measured values, used here ONLY as simulator parameters (declare under B9).
+  E_idle_mJ: 0.046
+  E_active_mJ: 12.5
+  P_base_W: 5.0           # device baseline power seen by a wall plug (assumed)
+  power:
+    fs_Hz_sweep: [1, 2, 5, 10]
+    sigma_W_sweep: [0.0, 0.02, 0.05, 0.10]
+    quant_W: 0.01         # smart-plug resolution (assumed)
+  traffic:
+    pkt_bytes_mean: 1200  # one notify/upload burst per open (assumed)
+    pkt_bytes_sd: 150
+    jitter_ms_sd: 5.0
+
+mi:
+  windows_s: [1, 2, 5, 10]
+  n_shuffle: 200          # permutation null for plug-in bias correction
+  n_boot: 500             # bootstrap over videos for pooled CI
+  informative_open_rate_max: 0.6
+  seed: 42
+
+output:
+  results_dir: "results"   # relative to topic folder
+
+# ---------------- P1 additions (09-10-2026) ----------------
+datasets_root_env: THS_DATASETS        # set THS_DATASETS=<repo>/data to use the derived VIRAT files shipped here
+datasets_root_default: "data"
+virat:
+  videos_subdir: "VIRAT/videos"
+  annotations_subdir: "VIRAT/annotations_diva"   # DIVA KPF annotations, gitlab.kitware.com/viratdata/viratannotations
+  derived_subdir: "_derived/39/virat"
+  asmag_src: ""      # only to RE-SCORE VIRAT videos: path to the ASMAG+ gate sources of [deep3]
+  asmag_config: ""   # and its controller config (asmag_tr_controller_online_guarded_cdnet_full.yaml)
+  resize_width: 320
+  fps: 30
+  disc_activities: [Opening, Closing, Entering, Exiting, Open_Trunk, Closing_Trunk, Loading, Unloading, PickUp, SetDown,
+                    Push, vehicle_starting, vehicle_stopping, vehicle_turning_left, vehicle_turning_right, vehicle_u_turn,
+                    activity_running, Riding, Person_Person_Interaction]
+  min_free_ram_gb: 6
+deployed_hysteresis:    # exact replay of the deployed ASMAG+ trace (verified 121/121 videos, 09-10-2026)
+  open_t: 0.55
+  close_t: 0.30
+  watchdog_closed_frames: 12
+  watchdog_interval: 6
+certificate_L: 5        # RR floor period P = L; deployed reuse cap (fsl > 4) certifies L = 6
+synthetic:
+  pi_sweep: [0.02, 0.05, 0.10, 0.20, 0.50]
+  n_videos: 30
+  T: 15000
+  fps: 25

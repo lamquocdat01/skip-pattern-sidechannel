@@ -1,0 +1,4 @@
+tag,dataset,video,n_frames,fps_native,dur_native_s,rho_G3,n_open,pi,informative,A1_evaluable_W_s,dilation,replay_s,sha256
+cdnet_blizzard,CDnet2014,blizzard,6100,25.0,244.0,0.507541,3096,0.37459,True,1;2;5,2.0,488.0,87ce55b371cbc72792e51a2628f52c791fc4324aee030c8c2e29a1892df7d67a
+lasiesta_O_RA_02,LASIESTA,O_RA_02,375,25.0,15.0,0.528,198,0.338667,True,,2.0,30.0,0f28272837170cb510d78195375ca90366dbb66884600a21623a8c74d46e0c5d
+virat_S_000002,VIRAT,VIRAT_S_000002,9075,30.0,302.5,0.477025,4329,0.224353,True,1;2;5;10,2.4,726.0,70567f7cfdc29318281eb263925235e4163ba58a99f75f2462ece45a01d14a46

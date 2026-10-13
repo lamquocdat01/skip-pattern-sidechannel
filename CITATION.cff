@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this software or data, please cite the accompanying paper."
+title: "Skip-pattern side channels of content-aware camera gating: code, preregistration, derived data and measured traces"
+abstract: >-
+  Gate families, observers, mutual-information estimators, attacks, bound checks, real-plug validation
+  (ESP32-S3 replay firmware and INA219 traces) and every result table behind a study of event leakage
+  through the open schedules of content-aware camera gates.
+authors:
+  - family-names: "Lam Quoc"
+    given-names: "Dat"
+    orcid: "https://orcid.org/0009-0004-5432-9343"
+    affiliation: "FPT School of Business and Technology, FPT University, Ho Chi Minh City, Viet Nam"
+license: MIT
+repository-code: "https://github.com/lamquocdat01/skip-pattern-sidechannel"
+version: "1.0.0-tdsc-submission"
+keywords:
+  - side channels
+  - privacy
+  - mutual information
+  - differential privacy
+  - video surveillance
+  - edge computing
+preferred-citation:
+  type: article
+  title: >-
+    When Skipping Speaks: Event Leakage through Content-Aware Gate Schedules, a Latency-Privacy
+    Impossibility, and the Case for Periodic Gating
+  authors:
+    - family-names: "Lam Quoc"
+      given-names: "Dat"
+      orcid: "https://orcid.org/0009-0004-5432-9343"
+  year: 2026

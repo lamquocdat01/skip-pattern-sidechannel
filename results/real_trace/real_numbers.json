@@ -1,0 +1,1515 @@
+{
+ "real.calib": {
+  "fps_play": 12.5,
+  "busy_ms": 72,
+  "sample_hz": 10,
+  "warmup_mean_mA": 62.97,
+  "samples_total": 13140,
+  "overruns": 0,
+  "i2c_errors": 0,
+  "busy_ms_mean": 72.011,
+  "I_idle_mA": 63.3,
+  "I_idle_sd_mA": 0.424,
+  "I_open_mA": 88.8,
+  "I_closed_mA": 63.4,
+  "I_closed_minus_idle_mA": 0.1,
+  "dI_frame_mA": 25.4,
+  "dI_busy_mA": 28.22,
+  "V_mean": 4.786,
+  "V_min": 4.584,
+  "V_max": 4.88,
+  "dP_busy_mW": 135.1,
+  "E_open_mJ": 9.72,
+  "E_open_over_deep3_E_active": 0.778,
+  "P_idle_mW": 302.9
+ },
+ "real.run": {
+  "samples": 13140,
+  "n_videos": 3,
+  "fps_play": 12.5,
+  "busy_ms": 72,
+  "sample_hz": 10,
+  "dilation_25": 2.0,
+  "dilation_30": 2.4,
+  "n_seeds": 5,
+  "B_auc": 1000,
+  "block_s": 10
+ },
+ "real.auc_within_blizzard_oracle_W1": {
+  "value": 0.8737,
+  "ci": [
+   0.783,
+   0.9413
+  ],
+  "U": 0.08,
+  "n_test_windows": 122
+ },
+ "real.auc_within_blizzard_oracle_W1_logit": {
+  "value": 0.9919,
+  "ci": [
+   0.9801,
+   0.9996
+  ],
+  "U": 0.0107,
+  "n_test_windows": 122
+ },
+ "real.auc_within_blizzard_sim_plug_W1": {
+  "value": 0.9546,
+  "ci": [
+   0.8864,
+   0.9958
+  ],
+  "U": 0.0629,
+  "n_test_windows": 122
+ },
+ "real.auc_within_blizzard_sim_plug_W1_logit": {
+  "value": 0.9831,
+  "ci": [
+   0.9582,
+   0.999
+  ],
+  "U": 0.022,
+  "n_test_windows": 122
+ },
+ "real.auc_within_blizzard_real_1hz_W1": {
+  "value": 0.9026,
+  "ci": [
+   0.8128,
+   0.9589
+  ],
+  "U": 0.0749,
+  "n_test_windows": 122
+ },
+ "real.auc_within_blizzard_real_1hz_W1_logit": {
+  "value": 0.9909,
+  "ci": [
+   0.9789,
+   1.0
+  ],
+  "U": 0.0116,
+  "n_test_windows": 122
+ },
+ "real.auc_within_blizzard_real_10hz_W1": {
+  "value": 0.9395,
+  "ci": [
+   0.8819,
+   0.9794
+  ],
+  "U": 0.0501,
+  "n_test_windows": 122
+ },
+ "real.auc_within_blizzard_real_10hz_W1_logit": {
+  "value": 0.9862,
+  "ci": [
+   0.9747,
+   0.9972
+  ],
+  "U": 0.0117,
+  "n_test_windows": 122
+ },
+ "real.auc_within_blizzard_oracle_W2": {
+  "value": 0.9668,
+  "ci": [
+   0.8977,
+   1.0
+  ],
+  "U": 0.0554,
+  "n_test_windows": 61
+ },
+ "real.auc_within_blizzard_oracle_W2_logit": {
+  "value": 0.993,
+  "ci": [
+   0.98,
+   1.0
+  ],
+  "U": 0.0113,
+  "n_test_windows": 61
+ },
+ "real.auc_within_blizzard_sim_plug_W2": {
+  "value": 0.9568,
+  "ci": [
+   0.9089,
+   0.9969
+  ],
+  "U": 0.0456,
+  "n_test_windows": 61
+ },
+ "real.auc_within_blizzard_sim_plug_W2_logit": {
+  "value": 0.9615,
+  "ci": [
+   0.8428,
+   1.0
+  ],
+  "U": 0.0824,
+  "n_test_windows": 61
+ },
+ "real.auc_within_blizzard_real_1hz_W2": {
+  "value": 0.9446,
+  "ci": [
+   0.8868,
+   0.9853
+  ],
+  "U": 0.0493,
+  "n_test_windows": 61
+ },
+ "real.auc_within_blizzard_real_1hz_W2_logit": {
+  "value": 0.9907,
+  "ci": [
+   0.9763,
+   1.0
+  ],
+  "U": 0.0137,
+  "n_test_windows": 61
+ },
+ "real.auc_within_blizzard_real_10hz_W2": {
+  "value": 0.9779,
+  "ci": [
+   0.9226,
+   1.0
+  ],
+  "U": 0.0449,
+  "n_test_windows": 61
+ },
+ "real.auc_within_blizzard_real_10hz_W2_logit": {
+  "value": 0.9977,
+  "ci": [
+   0.9914,
+   1.0
+  ],
+  "U": 0.0052,
+  "n_test_windows": 61
+ },
+ "real.auc_within_blizzard_oracle_W5_logit": {
+  "value": 0.9714,
+  "ci": [
+   0.8963,
+   1.0
+  ],
+  "U": 0.0575,
+  "n_test_windows": 24
+ },
+ "real.auc_within_blizzard_sim_plug_W5_logit": {
+  "value": 0.89,
+  "ci": [
+   0.6741,
+   1.0
+  ],
+  "U": 0.1712,
+  "n_test_windows": 24
+ },
+ "real.auc_within_blizzard_real_1hz_W5_logit": {
+  "value": 0.9714,
+  "ci": [
+   0.9021,
+   1.0
+  ],
+  "U": 0.0551,
+  "n_test_windows": 24
+ },
+ "real.auc_within_blizzard_real_10hz_W5_logit": {
+  "value": 0.9571,
+  "ci": [
+   0.8739,
+   1.0
+  ],
+  "U": 0.0682,
+  "n_test_windows": 24
+ },
+ "real.auc_within_virat_oracle_W1": {
+  "value": 0.8365,
+  "ci": [
+   0.7492,
+   0.9214
+  ],
+  "U": 0.0869,
+  "n_test_windows": 151
+ },
+ "real.auc_within_virat_oracle_W1_logit": {
+  "value": 0.3571,
+  "ci": [
+   0.1254,
+   0.6077
+  ],
+  "U": 0.2497,
+  "n_test_windows": 151
+ },
+ "real.auc_within_virat_sim_plug_W1": {
+  "value": 0.7785,
+  "ci": [
+   0.6133,
+   0.918
+  ],
+  "U": 0.1445,
+  "n_test_windows": 151
+ },
+ "real.auc_within_virat_sim_plug_W1_logit": {
+  "value": 0.8945,
+  "ci": [
+   0.7632,
+   0.9877
+  ],
+  "U": 0.1227,
+  "n_test_windows": 151
+ },
+ "real.auc_within_virat_real_1hz_W1": {
+  "value": 0.8249,
+  "ci": [
+   0.7229,
+   0.9051
+  ],
+  "U": 0.0928,
+  "n_test_windows": 151
+ },
+ "real.auc_within_virat_real_1hz_W1_logit": {
+  "value": 0.9538,
+  "ci": [
+   0.8716,
+   0.9951
+  ],
+  "U": 0.0676,
+  "n_test_windows": 151
+ },
+ "real.auc_within_virat_real_10hz_W1": {
+  "value": 0.7371,
+  "ci": [
+   0.6957,
+   0.796
+  ],
+  "U": 0.05,
+  "n_test_windows": 151
+ },
+ "real.auc_within_virat_real_10hz_W1_logit": {
+  "value": 0.2526,
+  "ci": [
+   0.1152,
+   0.4126
+  ],
+  "U": 0.1527,
+  "n_test_windows": 151
+ },
+ "real.auc_within_virat_oracle_W2": {
+  "value": 0.7932,
+  "ci": [
+   0.5699,
+   0.971
+  ],
+  "U": 0.2054,
+  "n_test_windows": 76
+ },
+ "real.auc_within_virat_oracle_W2_logit": {
+  "value": 0.3445,
+  "ci": [
+   0.1141,
+   0.5894
+  ],
+  "U": 0.2416,
+  "n_test_windows": 76
+ },
+ "real.auc_within_virat_sim_plug_W2": {
+  "value": 0.7532,
+  "ci": [
+   0.5129,
+   0.9213
+  ],
+  "U": 0.2303,
+  "n_test_windows": 76
+ },
+ "real.auc_within_virat_sim_plug_W2_logit": {
+  "value": 0.9242,
+  "ci": [
+   0.6659,
+   0.9945
+  ],
+  "U": 0.1807,
+  "n_test_windows": 76
+ },
+ "real.auc_within_virat_real_1hz_W2": {
+  "value": 0.898,
+  "ci": [
+   0.7831,
+   0.9658
+  ],
+  "U": 0.0944,
+  "n_test_windows": 76
+ },
+ "real.auc_within_virat_real_1hz_W2_logit": {
+  "value": 0.9608,
+  "ci": [
+   0.8742,
+   1.0
+  ],
+  "U": 0.0675,
+  "n_test_windows": 76
+ },
+ "real.auc_within_virat_real_10hz_W2": {
+  "value": 0.8715,
+  "ci": [
+   0.7474,
+   0.9621
+  ],
+  "U": 0.1108,
+  "n_test_windows": 76
+ },
+ "real.auc_within_virat_real_10hz_W2_logit": {
+  "value": 0.3836,
+  "ci": [
+   0.1499,
+   0.6091
+  ],
+  "U": 0.236,
+  "n_test_windows": 76
+ },
+ "real.auc_within_virat_oracle_W5_logit": {
+  "value": 0.3292,
+  "ci": [
+   0.0909,
+   0.5894
+  ],
+  "U": 0.2544,
+  "n_test_windows": 30
+ },
+ "real.auc_within_virat_sim_plug_W5_logit": {
+  "value": 0.872,
+  "ci": [
+   0.4423,
+   1.0
+  ],
+  "U": 0.3128,
+  "n_test_windows": 30
+ },
+ "real.auc_within_virat_real_1hz_W5_logit": {
+  "value": 0.9689,
+  "ci": [
+   0.832,
+   1.0
+  ],
+  "U": 0.0948,
+  "n_test_windows": 30
+ },
+ "real.auc_within_virat_real_10hz_W5_logit": {
+  "value": 0.2236,
+  "ci": [
+   0.0417,
+   0.5
+  ],
+  "U": 0.232,
+  "n_test_windows": 30
+ },
+ "real.auc_cross_blizzard2virat_oracle_W1": {
+  "value": 0.7985,
+  "ci": [
+   0.6548,
+   0.8968
+  ],
+  "U": 0.1238,
+  "n_test_windows": 302
+ },
+ "real.auc_cross_blizzard2virat_oracle_W1_logit": {
+  "value": 0.8405,
+  "ci": [
+   0.7202,
+   0.9325
+  ],
+  "U": 0.1084,
+  "n_test_windows": 302
+ },
+ "real.auc_cross_blizzard2virat_sim_plug_W1": {
+  "value": 0.8253,
+  "ci": [
+   0.6896,
+   0.9216
+  ],
+  "U": 0.1186,
+  "n_test_windows": 302
+ },
+ "real.auc_cross_blizzard2virat_sim_plug_W1_logit": {
+  "value": 0.8528,
+  "ci": [
+   0.738,
+   0.9379
+  ],
+  "U": 0.1054,
+  "n_test_windows": 302
+ },
+ "real.auc_cross_blizzard2virat_real_1hz_W1": {
+  "value": 0.7953,
+  "ci": [
+   0.6472,
+   0.9014
+  ],
+  "U": 0.1301,
+  "n_test_windows": 302
+ },
+ "real.auc_cross_blizzard2virat_real_1hz_W1_logit": {
+  "value": 0.8946,
+  "ci": [
+   0.7872,
+   0.9606
+  ],
+  "U": 0.0905,
+  "n_test_windows": 302
+ },
+ "real.auc_cross_blizzard2virat_real_10hz_W1": {
+  "value": 0.8112,
+  "ci": [
+   0.6589,
+   0.9151
+  ],
+  "U": 0.1308,
+  "n_test_windows": 302
+ },
+ "real.auc_cross_blizzard2virat_real_10hz_W1_logit": {
+  "value": 0.8676,
+  "ci": [
+   0.7487,
+   0.9454
+  ],
+  "U": 0.1021,
+  "n_test_windows": 302
+ },
+ "real.auc_cross_blizzard2virat_oracle_W2": {
+  "value": 0.8255,
+  "ci": [
+   0.6551,
+   0.9398
+  ],
+  "U": 0.1466,
+  "n_test_windows": 151
+ },
+ "real.auc_cross_blizzard2virat_oracle_W2_logit": {
+  "value": 0.868,
+  "ci": [
+   0.7427,
+   0.9557
+  ],
+  "U": 0.1097,
+  "n_test_windows": 151
+ },
+ "real.auc_cross_blizzard2virat_sim_plug_W2": {
+  "value": 0.8454,
+  "ci": [
+   0.693,
+   0.9488
+  ],
+  "U": 0.1325,
+  "n_test_windows": 151
+ },
+ "real.auc_cross_blizzard2virat_sim_plug_W2_logit": {
+  "value": 0.8535,
+  "ci": [
+   0.7029,
+   0.9527
+  ],
+  "U": 0.1287,
+  "n_test_windows": 151
+ },
+ "real.auc_cross_blizzard2virat_real_1hz_W2": {
+  "value": 0.8163,
+  "ci": [
+   0.6429,
+   0.9307
+  ],
+  "U": 0.1477,
+  "n_test_windows": 151
+ },
+ "real.auc_cross_blizzard2virat_real_1hz_W2_logit": {
+  "value": 0.883,
+  "ci": [
+   0.7577,
+   0.9665
+  ],
+  "U": 0.1075,
+  "n_test_windows": 151
+ },
+ "real.auc_cross_blizzard2virat_real_10hz_W2": {
+  "value": 0.8278,
+  "ci": [
+   0.7052,
+   0.922
+  ],
+  "U": 0.1122,
+  "n_test_windows": 151
+ },
+ "real.auc_cross_blizzard2virat_real_10hz_W2_logit": {
+  "value": 0.8855,
+  "ci": [
+   0.7805,
+   0.9607
+  ],
+  "U": 0.0943,
+  "n_test_windows": 151
+ },
+ "real.auc_cross_blizzard2virat_oracle_W5": {
+  "value": 0.8261,
+  "ci": [
+   0.6443,
+   0.9638
+  ],
+  "U": 0.1637,
+  "n_test_windows": 60
+ },
+ "real.auc_cross_blizzard2virat_oracle_W5_logit": {
+  "value": 0.8703,
+  "ci": [
+   0.7312,
+   0.974
+  ],
+  "U": 0.1248,
+  "n_test_windows": 60
+ },
+ "real.auc_cross_blizzard2virat_sim_plug_W5": {
+  "value": 0.8816,
+  "ci": [
+   0.7493,
+   0.9725
+  ],
+  "U": 0.1147,
+  "n_test_windows": 60
+ },
+ "real.auc_cross_blizzard2virat_sim_plug_W5_logit": {
+  "value": 0.867,
+  "ci": [
+   0.7212,
+   0.9735
+  ],
+  "U": 0.1301,
+  "n_test_windows": 60
+ },
+ "real.auc_cross_blizzard2virat_real_1hz_W5": {
+  "value": 0.8087,
+  "ci": [
+   0.631,
+   0.9435
+  ],
+  "U": 0.1612,
+  "n_test_windows": 60
+ },
+ "real.auc_cross_blizzard2virat_real_1hz_W5_logit": {
+  "value": 0.8922,
+  "ci": [
+   0.7725,
+   0.9778
+  ],
+  "U": 0.1069,
+  "n_test_windows": 60
+ },
+ "real.auc_cross_blizzard2virat_real_10hz_W5": {
+  "value": 0.8164,
+  "ci": [
+   0.6289,
+   0.9466
+  ],
+  "U": 0.1648,
+  "n_test_windows": 60
+ },
+ "real.auc_cross_blizzard2virat_real_10hz_W5_logit": {
+  "value": 0.8896,
+  "ci": [
+   0.7579,
+   0.9767
+  ],
+  "U": 0.1126,
+  "n_test_windows": 60
+ },
+ "real.auc_cross_virat2blizzard_oracle_W1": {
+  "value": 0.9067,
+  "ci": [
+   0.841,
+   0.9649
+  ],
+  "U": 0.0628,
+  "n_test_windows": 244
+ },
+ "real.auc_cross_virat2blizzard_oracle_W1_logit": {
+  "value": 0.9402,
+  "ci": [
+   0.8988,
+   0.9791
+  ],
+  "U": 0.041,
+  "n_test_windows": 244
+ },
+ "real.auc_cross_virat2blizzard_sim_plug_W1": {
+  "value": 0.9038,
+  "ci": [
+   0.8208,
+   0.9648
+  ],
+  "U": 0.0773,
+  "n_test_windows": 244
+ },
+ "real.auc_cross_virat2blizzard_sim_plug_W1_logit": {
+  "value": 0.9512,
+  "ci": [
+   0.8898,
+   0.9917
+  ],
+  "U": 0.0562,
+  "n_test_windows": 244
+ },
+ "real.auc_cross_virat2blizzard_real_1hz_W1": {
+  "value": 0.6854,
+  "ci": [
+   0.6131,
+   0.7549
+  ],
+  "U": 0.0716,
+  "n_test_windows": 244
+ },
+ "real.auc_cross_virat2blizzard_real_1hz_W1_logit": {
+  "value": 0.9453,
+  "ci": [
+   0.8997,
+   0.9893
+  ],
+  "U": 0.0459,
+  "n_test_windows": 244
+ },
+ "real.auc_cross_virat2blizzard_real_10hz_W1": {
+  "value": 0.6367,
+  "ci": [
+   0.5564,
+   0.7155
+  ],
+  "U": 0.0807,
+  "n_test_windows": 244
+ },
+ "real.auc_cross_virat2blizzard_real_10hz_W1_logit": {
+  "value": 0.9286,
+  "ci": [
+   0.8823,
+   0.9708
+  ],
+  "U": 0.0464,
+  "n_test_windows": 244
+ },
+ "real.auc_cross_virat2blizzard_oracle_W2": {
+  "value": 0.7485,
+  "ci": [
+   0.6257,
+   0.859
+  ],
+  "U": 0.1182,
+  "n_test_windows": 122
+ },
+ "real.auc_cross_virat2blizzard_oracle_W2_logit": {
+  "value": 0.9726,
+  "ci": [
+   0.9416,
+   0.9924
+  ],
+  "U": 0.0261,
+  "n_test_windows": 122
+ },
+ "real.auc_cross_virat2blizzard_sim_plug_W2": {
+  "value": 0.8725,
+  "ci": [
+   0.78,
+   0.9463
+  ],
+  "U": 0.0902,
+  "n_test_windows": 122
+ },
+ "real.auc_cross_virat2blizzard_sim_plug_W2_logit": {
+  "value": 0.9225,
+  "ci": [
+   0.8333,
+   0.9878
+  ],
+  "U": 0.0901,
+  "n_test_windows": 122
+ },
+ "real.auc_cross_virat2blizzard_real_1hz_W2": {
+  "value": 0.7283,
+  "ci": [
+   0.6611,
+   0.7908
+  ],
+  "U": 0.0661,
+  "n_test_windows": 122
+ },
+ "real.auc_cross_virat2blizzard_real_1hz_W2_logit": {
+  "value": 0.9731,
+  "ci": [
+   0.9429,
+   0.9926
+  ],
+  "U": 0.0258,
+  "n_test_windows": 122
+ },
+ "real.auc_cross_virat2blizzard_real_10hz_W2": {
+  "value": 0.5195,
+  "ci": [
+   0.3743,
+   0.6607
+  ],
+  "U": 0.1445,
+  "n_test_windows": 122
+ },
+ "real.auc_cross_virat2blizzard_real_10hz_W2_logit": {
+  "value": 0.957,
+  "ci": [
+   0.9115,
+   0.9892
+  ],
+  "U": 0.0404,
+  "n_test_windows": 122
+ },
+ "real.auc_cross_virat2blizzard_oracle_W5": {
+  "value": 0.6528,
+  "ci": [
+   0.4718,
+   0.8044
+  ],
+  "U": 0.1727,
+  "n_test_windows": 48
+ },
+ "real.auc_cross_virat2blizzard_oracle_W5_logit": {
+  "value": 0.95,
+  "ci": [
+   0.8624,
+   1.0
+  ],
+  "U": 0.0712,
+  "n_test_windows": 48
+ },
+ "real.auc_cross_virat2blizzard_sim_plug_W5": {
+  "value": 0.8233,
+  "ci": [
+   0.6111,
+   0.9633
+  ],
+  "U": 0.1987,
+  "n_test_windows": 48
+ },
+ "real.auc_cross_virat2blizzard_sim_plug_W5_logit": {
+  "value": 0.8674,
+  "ci": [
+   0.6768,
+   0.9778
+  ],
+  "U": 0.1488,
+  "n_test_windows": 48
+ },
+ "real.auc_cross_virat2blizzard_real_1hz_W5": {
+  "value": 0.7898,
+  "ci": [
+   0.6178,
+   0.9269
+  ],
+  "U": 0.1588,
+  "n_test_windows": 48
+ },
+ "real.auc_cross_virat2blizzard_real_1hz_W5_logit": {
+  "value": 0.9148,
+  "ci": [
+   0.7936,
+   0.9944
+  ],
+  "U": 0.1057,
+  "n_test_windows": 48
+ },
+ "real.auc_cross_virat2blizzard_real_10hz_W5": {
+  "value": 0.7981,
+  "ci": [
+   0.6286,
+   0.9321
+  ],
+  "U": 0.1537,
+  "n_test_windows": 48
+ },
+ "real.auc_cross_virat2blizzard_real_10hz_W5_logit": {
+  "value": 0.9278,
+  "ci": [
+   0.8178,
+   0.9964
+  ],
+  "U": 0.0922,
+  "n_test_windows": 48
+ },
+ "real.auc_smoke_lasiesta_oracle_W1_logit": {
+  "value": 0.3333,
+  "ci": [
+   0.3333,
+   0.3333
+  ],
+  "U": 0.0,
+  "n_test_windows": 8
+ },
+ "real.auc_smoke_lasiesta_sim_plug_W1_logit": {
+  "value": 0.48,
+  "ci": [
+   0.2,
+   0.8
+  ],
+  "U": 0.5449,
+  "n_test_windows": 8
+ },
+ "real.auc_smoke_lasiesta_real_1hz_W1_logit": {
+  "value": 0.4,
+  "ci": [
+   0.4,
+   0.4
+  ],
+  "U": 0.0,
+  "n_test_windows": 8
+ },
+ "real.auc_smoke_lasiesta_real_10hz_W1_logit": {
+  "value": 0.3333,
+  "ci": [
+   0.3333,
+   0.3333
+  ],
+  "U": 0.0,
+  "n_test_windows": 8
+ },
+ "real.auc_smoke_lasiesta_oracle_W2_logit": {
+  "value": 0.5,
+  "ci": [
+   0.5,
+   0.5
+  ],
+  "U": 0.0,
+  "n_test_windows": 4
+ },
+ "real.auc_smoke_lasiesta_sim_plug_W2_logit": {
+  "value": 0.7,
+  "ci": [
+   0.5,
+   0.75
+  ],
+  "U": 0.2236,
+  "n_test_windows": 4
+ },
+ "real.auc_smoke_lasiesta_real_1hz_W2_logit": {
+  "value": 0.5,
+  "ci": [
+   0.5,
+   0.5
+  ],
+  "U": 0.0,
+  "n_test_windows": 4
+ },
+ "real.auc_smoke_lasiesta_real_10hz_W2_logit": {
+  "value": 0.5,
+  "ci": [
+   0.5,
+   0.5
+  ],
+  "U": 0.0,
+  "n_test_windows": 4
+ },
+ "real.auc_smoke_blizzard2lasiesta_oracle_W1": {
+  "value": 0.5625,
+  "ci": [
+   0.5625,
+   0.5714
+  ],
+  "U": 0.0084,
+  "n_test_windows": 15
+ },
+ "real.auc_smoke_blizzard2lasiesta_oracle_W1_logit": {
+  "value": 0.4911,
+  "ci": [
+   0.4762,
+   0.4911
+  ],
+  "U": 0.014,
+  "n_test_windows": 15
+ },
+ "real.auc_smoke_blizzard2lasiesta_sim_plug_W1": {
+  "value": 0.5036,
+  "ci": [
+   0.2857,
+   0.8095
+  ],
+  "U": 0.3004,
+  "n_test_windows": 15
+ },
+ "real.auc_smoke_blizzard2lasiesta_sim_plug_W1_logit": {
+  "value": 0.4786,
+  "ci": [
+   0.4286,
+   0.6667
+  ],
+  "U": 0.1168,
+  "n_test_windows": 15
+ },
+ "real.auc_smoke_blizzard2lasiesta_real_1hz_W1": {
+  "value": 0.625,
+  "ci": [
+   0.619,
+   0.625
+  ],
+  "U": 0.0055,
+  "n_test_windows": 15
+ },
+ "real.auc_smoke_blizzard2lasiesta_real_1hz_W1_logit": {
+  "value": 0.5179,
+  "ci": [
+   0.5179,
+   0.6667
+  ],
+  "U": 0.1415,
+  "n_test_windows": 15
+ },
+ "real.auc_smoke_blizzard2lasiesta_real_10hz_W1": {
+  "value": 0.6071,
+  "ci": [
+   0.5714,
+   0.6071
+  ],
+  "U": 0.0336,
+  "n_test_windows": 15
+ },
+ "real.auc_smoke_blizzard2lasiesta_real_10hz_W1_logit": {
+  "value": 0.4821,
+  "ci": [
+   0.4821,
+   0.5238
+  ],
+  "U": 0.0392,
+  "n_test_windows": 15
+ },
+ "real.auc_smoke_blizzard2lasiesta_oracle_W2": {
+  "value": 0.3333,
+  "ci": [
+   0.25,
+   0.3333
+  ],
+  "U": 0.079,
+  "n_test_windows": 7
+ },
+ "real.auc_smoke_blizzard2lasiesta_oracle_W2_logit": {
+  "value": 0.3333,
+  "ci": [
+   0.3333,
+   0.5
+  ],
+  "U": 0.1571,
+  "n_test_windows": 7
+ },
+ "real.auc_smoke_blizzard2lasiesta_sim_plug_W2": {
+  "value": 0.4,
+  "ci": [
+   0.25,
+   1.0
+  ],
+  "U": 0.2693,
+  "n_test_windows": 7
+ },
+ "real.auc_smoke_blizzard2lasiesta_sim_plug_W2_logit": {
+  "value": 0.3667,
+  "ci": [
+   0.1667,
+   0.5
+  ],
+  "U": 0.2371,
+  "n_test_windows": 7
+ },
+ "real.auc_smoke_blizzard2lasiesta_real_1hz_W2": {
+  "value": 0.4167,
+  "ci": [
+   0.4167,
+   0.5
+  ],
+  "U": 0.0777,
+  "n_test_windows": 7
+ },
+ "real.auc_smoke_blizzard2lasiesta_real_1hz_W2_logit": {
+  "value": 0.3333,
+  "ci": [
+   0.3333,
+   0.5
+  ],
+  "U": 0.1569,
+  "n_test_windows": 7
+ },
+ "real.auc_smoke_blizzard2lasiesta_real_10hz_W2": {
+  "value": 0.5833,
+  "ci": [
+   0.5,
+   0.5833
+  ],
+  "U": 0.0786,
+  "n_test_windows": 7
+ },
+ "real.auc_smoke_blizzard2lasiesta_real_10hz_W2_logit": {
+  "value": 0.3333,
+  "ci": [
+   0.3333,
+   0.5
+  ],
+  "U": 0.1571,
+  "n_test_windows": 7
+ },
+ "real.auc_smoke_blizzard2lasiesta_oracle_W5": {
+  "value": 0.0,
+  "ci": [
+   0.0,
+   0.0
+  ],
+  "U": 0.0,
+  "n_test_windows": 3
+ },
+ "real.auc_smoke_blizzard2lasiesta_oracle_W5_logit": {
+  "value": 0.0,
+  "ci": [
+   0.0,
+   0.0
+  ],
+  "U": 0.0,
+  "n_test_windows": 3
+ },
+ "real.auc_smoke_blizzard2lasiesta_sim_plug_W5": {
+  "value": 0.1,
+  "ci": [
+   0.0,
+   0.5
+  ],
+  "U": 0.4472,
+  "n_test_windows": 3
+ },
+ "real.auc_smoke_blizzard2lasiesta_sim_plug_W5_logit": {
+  "value": 0.1,
+  "ci": [
+   0.0,
+   0.5
+  ],
+  "U": 0.4472,
+  "n_test_windows": 3
+ },
+ "real.auc_smoke_blizzard2lasiesta_real_1hz_W5": {
+  "value": 0.25,
+  "ci": [
+   0.25,
+   0.25
+  ],
+  "U": 0.0,
+  "n_test_windows": 3
+ },
+ "real.auc_smoke_blizzard2lasiesta_real_1hz_W5_logit": {
+  "value": 0.0,
+  "ci": [
+   0.0,
+   0.0
+  ],
+  "U": 0.0,
+  "n_test_windows": 3
+ },
+ "real.auc_smoke_blizzard2lasiesta_real_10hz_W5": {
+  "value": 0.0,
+  "ci": [
+   0.0,
+   0.0
+  ],
+  "U": 0.0,
+  "n_test_windows": 3
+ },
+ "real.auc_smoke_blizzard2lasiesta_real_10hz_W5_logit": {
+  "value": 0.0,
+  "ci": [
+   0.0,
+   0.0
+  ],
+  "U": 0.0,
+  "n_test_windows": 3
+ },
+ "real.mi_blizzard_oracle_W1": {
+  "value": 0.6533,
+  "ci": [
+   0.5178,
+   0.8136
+  ],
+  "U": 0.1542,
+  "H_E": 0.9918,
+  "n_windows": 244
+ },
+ "real.mi_blizzard_sim_plug_W1": {
+  "value": 0.587,
+  "ci": [
+   0.4721,
+   0.7366
+  ],
+  "U": 0.1368,
+  "H_E": 0.9918,
+  "n_windows": 244
+ },
+ "real.mi_blizzard_real_1hz_W1": {
+  "value": 0.6603,
+  "ci": [
+   0.5239,
+   0.8073
+  ],
+  "U": 0.1448,
+  "H_E": 0.9918,
+  "n_windows": 244
+ },
+ "real.mi_blizzard_real_10hz_W1": {
+  "value": 0.6663,
+  "ci": [
+   0.5333,
+   0.8194
+  ],
+  "U": 0.142,
+  "H_E": 0.9918,
+  "n_windows": 244
+ },
+ "real.mi_blizzard_oracle_W2": {
+  "value": 0.7082,
+  "ci": [
+   0.5722,
+   0.8571
+  ],
+  "U": 0.1458,
+  "H_E": 0.9992,
+  "n_windows": 122
+ },
+ "real.mi_blizzard_sim_plug_W2": {
+  "value": 0.6143,
+  "ci": [
+   0.4696,
+   0.7983
+  ],
+  "U": 0.1801,
+  "H_E": 0.9992,
+  "n_windows": 122
+ },
+ "real.mi_blizzard_real_1hz_W2": {
+  "value": 0.6697,
+  "ci": [
+   0.5391,
+   0.849
+  ],
+  "U": 0.1599,
+  "H_E": 0.9992,
+  "n_windows": 122
+ },
+ "real.mi_blizzard_real_10hz_W2": {
+  "value": 0.6688,
+  "ci": [
+   0.5319,
+   0.8494
+  ],
+  "U": 0.1636,
+  "H_E": 0.9992,
+  "n_windows": 122
+ },
+ "real.mi_blizzard_oracle_W5": {
+  "value": 0.7294,
+  "ci": [
+   0.4874,
+   0.9017
+  ],
+  "U": 0.227,
+  "H_E": 0.9544,
+  "n_windows": 48
+ },
+ "real.mi_blizzard_sim_plug_W5": {
+  "value": 0.5227,
+  "ci": [
+   0.2619,
+   0.7912
+  ],
+  "U": 0.309,
+  "H_E": 0.9544,
+  "n_windows": 48
+ },
+ "real.mi_blizzard_real_1hz_W5": {
+  "value": 0.6128,
+  "ci": [
+   0.3907,
+   0.8693
+  ],
+  "U": 0.2387,
+  "H_E": 0.9544,
+  "n_windows": 48
+ },
+ "real.mi_blizzard_real_10hz_W5": {
+  "value": 0.5891,
+  "ci": [
+   0.3727,
+   0.833
+  ],
+  "U": 0.2435,
+  "H_E": 0.9544,
+  "n_windows": 48
+ },
+ "real.mi_virat_oracle_W1": {
+  "value": 0.2179,
+  "ci": [
+   0.0667,
+   0.4267
+  ],
+  "U": 0.1846,
+  "H_E": 0.7924,
+  "n_windows": 302
+ },
+ "real.mi_virat_sim_plug_W1": {
+  "value": 0.2203,
+  "ci": [
+   0.0801,
+   0.4439
+  ],
+  "U": 0.1914,
+  "H_E": 0.7924,
+  "n_windows": 302
+ },
+ "real.mi_virat_real_1hz_W1": {
+  "value": 0.2265,
+  "ci": [
+   0.0782,
+   0.4436
+  ],
+  "U": 0.1902,
+  "H_E": 0.7924,
+  "n_windows": 302
+ },
+ "real.mi_virat_real_10hz_W1": {
+  "value": 0.2428,
+  "ci": [
+   0.0919,
+   0.4451
+  ],
+  "U": 0.1859,
+  "H_E": 0.7924,
+  "n_windows": 302
+ },
+ "real.mi_virat_oracle_W2": {
+  "value": 0.2424,
+  "ci": [
+   0.0803,
+   0.524
+  ],
+  "U": 0.2305,
+  "H_E": 0.8241,
+  "n_windows": 151
+ },
+ "real.mi_virat_sim_plug_W2": {
+  "value": 0.2178,
+  "ci": [
+   0.0714,
+   0.4841
+  ],
+  "U": 0.2094,
+  "H_E": 0.8241,
+  "n_windows": 151
+ },
+ "real.mi_virat_real_1hz_W2": {
+  "value": 0.2415,
+  "ci": [
+   0.0783,
+   0.5024
+  ],
+  "U": 0.221,
+  "H_E": 0.8241,
+  "n_windows": 151
+ },
+ "real.mi_virat_real_10hz_W2": {
+  "value": 0.2479,
+  "ci": [
+   0.0837,
+   0.5296
+  ],
+  "U": 0.2326,
+  "H_E": 0.8241,
+  "n_windows": 151
+ },
+ "real.mi_virat_oracle_W5": {
+  "value": 0.2002,
+  "ci": [
+   0.0367,
+   0.6099
+  ],
+  "U": 0.2882,
+  "H_E": 0.9007,
+  "n_windows": 60
+ },
+ "real.mi_virat_sim_plug_W5": {
+  "value": 0.2151,
+  "ci": [
+   0.0405,
+   0.5733
+  ],
+  "U": 0.283,
+  "H_E": 0.9007,
+  "n_windows": 60
+ },
+ "real.mi_virat_real_1hz_W5": {
+  "value": 0.1949,
+  "ci": [
+   0.0397,
+   0.5441
+  ],
+  "U": 0.2628,
+  "H_E": 0.9007,
+  "n_windows": 60
+ },
+ "real.mi_virat_real_10hz_W5": {
+  "value": 0.1987,
+  "ci": [
+   0.0507,
+   0.555
+  ],
+  "U": 0.2644,
+  "H_E": 0.9007,
+  "n_windows": 60
+ },
+ "real.mi_lasiesta_oracle_W1": {
+  "value": 0.0,
+  "ci": [
+   0.0,
+   0.2485
+  ],
+  "U": 0.2064,
+  "H_E": 0.9968,
+  "n_windows": 15
+ },
+ "real.mi_lasiesta_sim_plug_W1": {
+  "value": 0.0,
+  "ci": [
+   0.0,
+   0.6985
+  ],
+  "U": 0.2092,
+  "H_E": 0.9968,
+  "n_windows": 15
+ },
+ "real.mi_lasiesta_real_1hz_W1": {
+  "value": 0.0,
+  "ci": [
+   0.0,
+   0.3575
+  ],
+  "U": 0.3033,
+  "H_E": 0.9968,
+  "n_windows": 15
+ },
+ "real.mi_lasiesta_real_10hz_W1": {
+  "value": 0.0,
+  "ci": [
+   0.0,
+   0.2055
+  ],
+  "U": 0.1665,
+  "H_E": 0.9968,
+  "n_windows": 15
+ },
+ "real.mi_lasiesta_oracle_W2": {
+  "value": 0.0,
+  "ci": [
+   0.0,
+   0.1404
+  ],
+  "U": 0.1094,
+  "H_E": 0.9852,
+  "n_windows": 7
+ },
+ "real.mi_lasiesta_sim_plug_W2": {
+  "value": 0.0171,
+  "ci": [
+   0.0,
+   0.451
+  ],
+  "U": 0.2509,
+  "H_E": 0.9852,
+  "n_windows": 7
+ },
+ "real.mi_lasiesta_real_1hz_W2": {
+  "value": 0.0529,
+  "ci": [
+   0.0,
+   0.4562
+  ],
+  "U": 0.3551,
+  "H_E": 0.9852,
+  "n_windows": 7
+ },
+ "real.mi_lasiesta_real_10hz_W2": {
+  "value": 0.0,
+  "ci": [
+   0.0,
+   0.372
+  ],
+  "U": 0.3035,
+  "H_E": 0.9852,
+  "n_windows": 7
+ },
+ "real.mi_lasiesta_oracle_W5": {
+  "value": 0.0,
+  "ci": [
+   0.0,
+   0.0
+  ],
+  "U": 0.0,
+  "H_E": 0.9183,
+  "n_windows": 3
+ },
+ "real.mi_lasiesta_sim_plug_W5": {
+  "value": 0.0,
+  "ci": [
+   0.0,
+   0.0
+  ],
+  "U": 0.0,
+  "H_E": 0.9183,
+  "n_windows": 3
+ },
+ "real.mi_lasiesta_real_1hz_W5": {
+  "value": 0.0,
+  "ci": [
+   0.0,
+   0.0
+  ],
+  "U": 0.0,
+  "H_E": 0.9183,
+  "n_windows": 3
+ },
+ "real.mi_lasiesta_real_10hz_W5": {
+  "value": 0.0,
+  "ci": [
+   0.0,
+   0.0
+  ],
+  "U": 0.0,
+  "H_E": 0.9183,
+  "n_windows": 3
+ },
+ "real.within_verdict": {
+  "n_consistent": 3,
+  "of": 4,
+  "n_lower": 0,
+  "n_higher": 1,
+  "diff_min": -0.052,
+  "diff_max": 0.1448
+ },
+ "real.within_verdict_logit": {
+  "n_consistent": 3,
+  "of": 6,
+  "n_lower": 0,
+  "n_higher": 3,
+  "diff_min": 0.0078,
+  "diff_max": 0.0969
+ },
+ "real.cross_verdict": {
+  "n_consistent": 4,
+  "of": 6,
+  "n_lower": 2,
+  "n_higher": 0,
+  "diff_min": -0.2184,
+  "diff_max": -0.0291
+ },
+ "real.cross_verdict_logit": {
+  "n_consistent": 5,
+  "of": 6,
+  "n_lower": 0,
+  "n_higher": 1,
+  "diff_min": -0.0059,
+  "diff_max": 0.0506
+ },
+ "real.a3occ_R2_real_1hz": {
+  "min": -1.031,
+  "max": 0.628
+ },
+ "real.fig_trace_start_s": 127
+}

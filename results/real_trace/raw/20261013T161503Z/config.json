@@ -1,0 +1,34 @@
+{
+ "version": "T22a-1",
+ "gate": "G3_deployed",
+ "fps_play": 12.5,
+ "busy_ms": 72,
+ "sample_hz": 10,
+ "warmup_s": 10,
+ "idle_s": 20,
+ "min_shunt_ma": 15.0,
+ "expected_total_s": 1314.0,
+ "schedules": [
+  {
+   "tag": "cdnet_blizzard",
+   "file": "/sched_cdnet_blizzard.csv",
+   "n": 6100,
+   "n_open": 3096,
+   "fps_native": 25.0
+  },
+  {
+   "tag": "lasiesta_O_RA_02",
+   "file": "/sched_lasiesta_O_RA_02.csv",
+   "n": 375,
+   "n_open": 198,
+   "fps_native": 25.0
+  },
+  {
+   "tag": "virat_S_000002",
+   "file": "/sched_virat_S_000002.csv",
+   "n": 9075,
+   "n_open": 4329,
+   "fps_native": 30.0
+  }
+ ]
+}

@@ -1,0 +1,70 @@
+{
+ "host_utc": "20261013T161503Z",
+ "port": "COM9",
+ "n_files": 9,
+ "files": [
+  {
+   "name": "config.json",
+   "size": 635,
+   "crc32": "ca62cd0c",
+   "crc_ok": true,
+   "sha256": "746aa980a490ff8cf099b8c386d5a6260218f5b660905598a21c59ab913523b1"
+  },
+  {
+   "name": "meta.json",
+   "size": 1164,
+   "crc32": "e25a50b0",
+   "crc_ok": true,
+   "sha256": "1e800c947303f82dbb64efd2dbc4110ced4e3f922b397853303555673da6b599"
+  },
+  {
+   "name": "sched_cdnet_blizzard.csv",
+   "size": 41600,
+   "crc32": "496dfdef",
+   "crc_ok": true,
+   "sha256": "87ce55b371cbc72792e51a2628f52c791fc4324aee030c8c2e29a1892df7d67a"
+  },
+  {
+   "name": "sched_lasiesta_O_RA_02.csv",
+   "size": 2150,
+   "crc32": "42db9aa6",
+   "crc_ok": true,
+   "sha256": "0f28272837170cb510d78195375ca90366dbb66884600a21623a8c74d46e0c5d"
+  },
+  {
+   "name": "sched_virat_S_000002.csv",
+   "size": 62425,
+   "crc32": "a0b06feb",
+   "crc_ok": true,
+   "sha256": "70567f7cfdc29318281eb263925235e4163ba58a99f75f2462ece45a01d14a46"
+  },
+  {
+   "name": "trace__warmup.csv",
+   "size": 2259,
+   "crc32": "81b90459",
+   "crc_ok": true,
+   "sha256": "8c2b68dc6ed0b39c279f80178931d9b3b037d4bcd27c514a9738a331a10048ec"
+  },
+  {
+   "name": "trace_cdnet_blizzard.csv",
+   "size": 135431,
+   "crc32": "f0ee780a",
+   "crc_ok": true,
+   "sha256": "82e9cc4a1b687968e1b4e12501a19dba826f0f9026615e5b0cbc28e4120ac25b"
+  },
+  {
+   "name": "trace_lasiesta_O_RA_02.csv",
+   "size": 12955,
+   "crc32": "baf18284",
+   "crc_ok": true,
+   "sha256": "fd44389766c52b81ec05ded9d4a3d11aec8452f7d23be882306c395b6bcf7a2e"
+  },
+  {
+   "name": "trace_virat_S_000002.csv",
+   "size": 203731,
+   "crc32": "38b59a4c",
+   "crc_ok": true,
+   "sha256": "508f2cdd8dc3a7b1c3e008a79615eeade0f48b83df370cec09929cdd2cb529a1"
+  }
+ ]
+}
