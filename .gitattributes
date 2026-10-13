@@ -1,0 +1,3 @@
+# No line-ending conversion, anywhere: the paper prints SHA-256 hashes of files in this repository,
+# and they must reproduce from a fresh clone on any platform.
+* -text
