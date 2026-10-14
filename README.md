@@ -9,6 +9,8 @@ Every number printed in the paper is a key of [`results/numbers.json`](results/n
 `code/p1_report.py` from the tables in `results/`. The manuscript reads them through an auto-generated `numbers.tex`;
 no number is typed by hand.
 
+The version cited by the paper is the tag **`v1.0.1-tdsc-submission`** (changes in [`CHANGELOG.md`](CHANGELOG.md)).
+
 ## Layout
 
 | Path | Content |

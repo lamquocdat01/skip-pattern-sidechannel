@@ -12,7 +12,7 @@ authors:
     affiliation: "FPT School of Business and Technology, FPT University, Ho Chi Minh City, Viet Nam"
 license: MIT
 repository-code: "https://github.com/lamquocdat01/skip-pattern-sidechannel"
-version: "1.0.0-tdsc-submission"
+version: "1.0.1-tdsc-submission"
 keywords:
   - side channels
   - privacy

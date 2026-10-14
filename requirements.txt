@@ -8,3 +8,4 @@ pyarrow==22.0.0
 matplotlib==3.10.8
 PyYAML==6.0.3
 pyserial==3.5
+opencv-python-headless==4.10.0.84   # only to re-score the raw VIRAT videos (code/virat_scores.py)

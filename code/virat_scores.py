@@ -17,7 +17,6 @@ import sys
 import time
 from pathlib import Path
 
-import cv2
 import numpy as np
 import pandas as pd
 import psutil
@@ -76,6 +75,7 @@ def detection_mask(geom_file: Path, n: int) -> np.ndarray:
 
 
 def run_gate(mp4: Path, has_det: np.ndarray, cfg: dict) -> np.ndarray:
+    import cv2  # only needed to re-score the raw VIRAT videos
     vc = cfg["virat"]
     if vc["asmag_src"] not in sys.path:
         sys.path.insert(0, vc["asmag_src"])
@@ -109,6 +109,7 @@ def event_count(e: np.ndarray) -> int:
 
 
 def main() -> None:
+    import cv2  # only needed to re-score the raw VIRAT videos
     cfg = load_config()
     vdir, adir, ddir = virat_paths(cfg)
     ddir.mkdir(parents=True, exist_ok=True)
